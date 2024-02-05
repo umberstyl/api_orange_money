@@ -1,0 +1,42 @@
+{
+  "name": "ORANGE MONEY/API_ORANGE_MONEY_PHP",
+  "description": "Orange Money PHP Library",
+  "keywords": [
+    "API_ORANGE_MONEY",
+    "payment processing",
+    "api"
+  ],
+  "homepage": "https://boorwin.co/payment/api/orangemoney/1.0.2",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "BOORWIN UMA AND N.T SARL",
+      "homepage": "https://github.com/boorwin/orangemoney/",
+      "email" : "boorwin.inc@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "API_ORANGE_MONEY\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "API_ORANGE_MONEY\\": [
+        "test_ap/",
+        "test_api/index.php"
+      ]
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.2.0-dev"
+    }
+  }
+}
