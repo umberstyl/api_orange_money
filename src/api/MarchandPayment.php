@@ -12,21 +12,15 @@
 
 // Include the configuration file 
 
-
-
-require_once 'InitializeApi.php';
+namespace Boorwin\OrangeMoney\api;
 
 
 class MarchandPayment
 {
 
-    private $Okey;
-    private $OSecret;
     private $API_url;
     public function __construct()
     {
-        $this->Okey = ORANGE_MONEY_SANDBOX? ORANGE_MONEY_SANDBOX_KEY : ORANGE_MONEY_PROD_KEY;  
-        $this->OSecret = ORANGE_MONEY_SANDBOX? ORANGE_MONEY_SANDBOX_SECRET : ORANGE_MONEY_PROD_SECRET; 
         $this->API_url  = ORANGE_MONEY_SANDBOX ? 'http://apiw.orange.cm/omcoreapis/1.0.2' : 'https://apiw.orange.cm/omcoreapis/1.0.2'; 
 
     }
@@ -51,8 +45,6 @@ class MarchandPayment
         curl_setopt($ch, CURLOPT_HEADER, 'Authorization: Bearer ' .  $mTokens['TOKEN']);
         curl_setopt($ch, CURLOPT_HEADER, 'X-AUTH-TOKEN: ' . ORANGE_MONEY_XAUTH_TOKEN);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $params); 
-        curl_setopt($ch, CURLOPT_USERPWD, $this->Okey.":".$this->OSecret);  
         curl_setopt($ch, CURLOPT_POST, true);  
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
         $payment = curl_exec($ch);
@@ -92,8 +84,6 @@ class MarchandPayment
         curl_setopt($ch, CURLOPT_HEADER, 'Content-Type: application/x-www-form-urlencoded'); 
         curl_setopt($ch, CURLOPT_HEADER, 'Authorization: Bearer ' . $token_auth['TOKEN']);
         curl_setopt($ch, CURLOPT_HEADER, 'X-AUTH-TOKEN: ' . ORANGE_MONEY_XAUTH_TOKEN); 
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  
-        curl_setopt($ch, CURLOPT_USERPWD, $this->Okey.":".$this->OSecret);  
         curl_setopt($ch, CURLOPT_POST, true);  
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
         $auth_resp = json_decode(curl_exec($ch));
