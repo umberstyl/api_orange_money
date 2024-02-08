@@ -9,8 +9,8 @@
  * @version 1.0.2 
  */  
  // Include the configuration file 
+ namespace Boorwin\OrangeMoney\api;
 
-require_once 'InitializeApi.php';
 
 class TransactionStatus
 {
