@@ -1,13 +1,4 @@
 {
-    "repositories": [
-      {
-        "type": "path",
-        "url": "https://github.com/umberstyl/api_orange_money",
-        "options": {
-          "symlink": true
-        }
-      }
-    ],
     "name": "boorwin/orange_money",
     "description": "Orange Money PHP Library",
     "type": "library",
