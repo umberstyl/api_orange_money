@@ -15,9 +15,6 @@
         "email": "boorwin.inc@gmail.com"
       }
     ],
-    "require": {
-      "php": ">=7.4.0"
-    },
     "autoload": {
       "psr-4": {
         "Boorwin\\OrangeMoney\\": "src/"
